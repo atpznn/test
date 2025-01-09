@@ -1,11 +1,14 @@
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
 
-const filePath = path.join(__dirname, "database.json");
+const filePath = path.join(
+  new URL(".", import.meta.url).pathname,
+  "database.json"
+);
 
 export function readJSONFile() {
   try {
-    const data = fs.readFileSync(filePath, "utf8");
+    const data = fs.readFileSync("./database.json", "utf8");
     return JSON.parse(data);
   } catch (error) {
     console.error("Error reading JSON file:", error);
@@ -16,7 +19,7 @@ export function readJSONFile() {
 export function writeJSONFile(jsonData) {
   try {
     const jsonString = JSON.stringify(jsonData, null, 2);
-    fs.writeFileSync(filePath, jsonString, "utf8");
+    fs.writeFileSync("./database.json", jsonString, "utf8");
     console.log("File written successfully.");
   } catch (error) {
     console.error("Error writing JSON file:", error);

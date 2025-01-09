@@ -1,13 +1,13 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const {
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+import {
   readJSONFile,
   writeJSONFile,
   addNewItem,
   updateItem,
   deleteItem,
-} = require("./jsonManager");
+} from "./jsonManager.js";
 
 const app = express();
 const port = 3000;
@@ -47,19 +47,21 @@ app.put("/pencils/:index", (req, res) => {
   }
 });
 
-app.post("/pencils", (req, res) => {
-  const newPencil = req.body;
+app.post("/pencils/:color", (req, res) => {
+  const { color } = req.body;
   try {
-    addNewItem(newPencil);
+    addNewItem({ color: color, qty: 1 });
     res.json({ message: "New pencil added successfully.", newPencil });
   } catch (error) {
     res.status(500).json({ error: "Error adding new pencil." });
   }
 });
 
-app.delete("/pencils/:index", (req, res) => {
-  const { index } = req.params;
+app.delete("/pencils/:color", (req, res) => {
+  const { color } = req.params;
   try {
+    const jsonData = readJSONFile();
+    const index = jsonData.pencils.findIndex((x) => x.color == color);
     deleteItem(parseInt(index));
     res.json({ message: `Pencil at index ${index} deleted successfully.` });
   } catch (error) {
