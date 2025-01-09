@@ -1,0 +1,23 @@
+{
+    "pencils":[
+        {"color":"red","qty":1},
+        {"color":"green","qty":1},
+        {"color":"red","qty":1},
+        {"color":"red","qty":1},
+        {"color":"red","qty":1},
+        {"color":"red","qty":1},
+        {"color":"red","qty":1},
+        {"color":"green","qty":1},
+        {"color":"red","qty":1},
+        {"color":"red","qty":1},
+        {"color":"red","qty":1},
+        {"color":"yellow","qty":1},
+        {"color":"yellow","qty":1},
+        {"color":"red","qty":1},
+        {"color":"yellow","qty":1},
+        {"color":"yellow","qty":1},
+        {"color":"red","qty":1},
+        {"color":"red","qty":1},
+        {"color":"red","qty":1}
+    ]
+}
