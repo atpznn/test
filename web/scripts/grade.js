@@ -10,6 +10,5 @@ export function gradeCalculator(score) {
 
   } else {
     return "";
-
   }
 }
