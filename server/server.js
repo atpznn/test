@@ -3,22 +3,18 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import {
   readJSONFile,
-  writeJSONFile,
   addNewItem,
   updateItem,
   deleteItem,
 } from "./jsonManager.js";
 import http from "http";
 import { Server } from "socket.io";
-import path from "path";
 
 const app = express();
 const port = 3000;
 
-// Serve static files
 app.use(express.static("public"));
 
-// Create an HTTP server
 const server = http.createServer(app);
 
 const io = new Server(server);
@@ -102,7 +98,6 @@ app.delete("/pencils/:color", (req, res) => {
   }
 });
 
-// Start the server
 server.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });

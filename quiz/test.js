@@ -57,5 +57,8 @@ async function main() {
   }
   readline.close();
 }
-
+function test() {
+  console.log("test");
+}
 main();
+test();
