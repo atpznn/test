@@ -5,9 +5,6 @@ function getElement(key) {
 }
 
 const element = {
-  startGame: "start-game",
-  boardGame: "board-game",
-  player: "player",
   answerGrade: "answer-grade",
   gradeInput: "grade-input",
   number1: "number1",

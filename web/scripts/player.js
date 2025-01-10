@@ -13,13 +13,28 @@ export async function movePlayer(player, direction, distance) {
   if (diffWidth == null) {
     diffWidth = parseInt(_c["left"].split("px")[0]);
   }
-  const height = gameboardRect.height + diffHeight;
-  const width = gameboardRect.width + diffWidth;
+  console.log(gameboard.style);
+  console.log(gameboard.style.left);
+  console.log(gameboard.style.top + gameboard.style.height);
+  console.log(gameboard.style.left + gameboard.style.width);
+
+  const height = gameboardRect.height; /*+ diffHeight*/
+  const width = gameboardRect.width; /*+ diffWidth*/
 
   const maxFrameBottom = height - player.clientHeight;
-  const maxFrameTop = height;
+  const maxFrameTop = height + player.clientHeight;
   const maxFrameRight = width - player.clientWidth;
   const maxFrameLeft = width;
+
+  console.log("b", maxFrameBottom);
+  console.log("t", maxFrameTop);
+  console.log("r", maxFrameRight);
+  console.log("l", maxFrameLeft);
+  console.log("h", height);
+  console.log("w", width);
+  console.log("dh", diffHeight);
+  console.log("dw", diffWidth);
+  console.log("c", currentPosition);
 
   let error = false;
   return new Promise((resolve) => {

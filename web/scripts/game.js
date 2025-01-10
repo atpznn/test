@@ -11,29 +11,22 @@ const playerImages = {
   idle: "Player_idle.gif",
 };
 
-const baseAssetAddress = "asset/";
+const baseAssetAddress = "../asset/";
 
 const element = {
   startGame: "start-game",
   boardGame: "board-game",
   player: "player",
-  answerGrade: "answer-grade",
-  gradeInput: "grade-input",
-  number1: "number1",
-  number2: "number2",
-  gradeButton: "grade-button",
-  plus: "+",
-  minus: "-",
-  multiple: "*",
-  divide: "/",
-  result: "result",
 };
 
-const startgame = document.getElementById(element.startGame);
+// const startgame = document.getElementById(element.startGame);
 let hasPress = false;
 
-startgame.addEventListener("click", (e) => {
-  startgame.style.display = "none";
+// startgame.addEventListener("click", (e) => {
+//   startgame.style.display = "none";
+
+// });
+document.addEventListener("DOMContentLoaded", () => {
   const gameboard = document.getElementById(element.boardGame);
   var elem = document.createElement("img");
   elem.setAttribute("src", baseAssetAddress + playerImages.idle);
