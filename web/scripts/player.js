@@ -1,6 +1,6 @@
 let diffHeight = null;
 let diffWidth = null;
-exports.movePlayer = async function movePlayer(player, direction, distance) {
+export async function movePlayer(player, direction, distance) {
   const _c = document.defaultView.getComputedStyle(player);
   let currentPosition = parseInt(_c[direction].split("px")[0]);
   let targetPosition = currentPosition + distance;
@@ -69,4 +69,4 @@ exports.movePlayer = async function movePlayer(player, direction, distance) {
       }
     }, 50);
   });
-};
+}

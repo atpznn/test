@@ -53,8 +53,13 @@ async function initState() {
         await initState();
       });
     pencilAction.appendChild(penclAction);
-    pencilAction.style.marginTop = "24px";
     pencilAction.style.marginBottom = "12px";
+    pencilAction.style.marginTop = "12px";
+
+    const mile = document.createElement("div");
+    mile.innerText = `pencil ${color.color} long : ${color.qty} m.`;
+    mile.style.marginTop = "12px";
+    divContainer.appendChild(mile);
     divContainer.appendChild(pencilAction);
     divContainer.appendChild(pencilContainer);
   }

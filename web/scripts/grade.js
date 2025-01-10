@@ -1,4 +1,4 @@
-exports.gradeCalculator = function gradeCalculator(score) {
+export function gradeCalculator(score) {
   if (score >= 80) {
     return "A";
   } else if (score) {
@@ -6,4 +6,4 @@ exports.gradeCalculator = function gradeCalculator(score) {
   } else if (score) {
   } else {
   }
-};
+}

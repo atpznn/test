@@ -1,4 +1,4 @@
-exports.calculator = function calculator(num1, num2, operator) {
+export function calculator(num1, num2, operator) {
   if (operator == "+") {
     return num1 + num2;
   } else if (operator == "-") {
@@ -8,4 +8,4 @@ exports.calculator = function calculator(num1, num2, operator) {
   } else if (operator == "/") {
     return;
   }
-};
+}
