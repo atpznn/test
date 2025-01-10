@@ -11,13 +11,13 @@
   <nav>
     <ul style="display: flex; gap: 20px">
       <li>
-        <a href="/pages"> หน้าแรก </a>
+        <a href="./index.html"> หน้าแรก </a>
       </li>
       <li>
-        <a href="/pages/game.html"> เกม </a>
+        <a href="./game.html"> เกม </a>
       </li>
       <li>
-        <a href="/pages/online.html"> ออนไลน์ </a>
+        <a href="./online.html"> ออนไลน์ </a>
       </li>
     </ul>
   </nav>
@@ -33,6 +33,7 @@
       <div id="pencil-canvas" style="display: flex;flex-direction: column;gap:12px;">
       </div>
     </div>
+  </div>
     <template id="pencil-action-template">
       <div style="display: flex;gap:12px">
         <button id="minus">-</button>
@@ -51,6 +52,9 @@
         </div>
     </div>
 </template>
+<div>
+  <iframe  style="width: 100%;height: 100%;" src="http://localhost:3000" frameborder="0"></iframe>
+</div>
 </body>
 <style>
   .pencil-head {
@@ -71,6 +75,6 @@
   }
 </style>
 
-<script type="module" src="/scripts/handler.js"></script>
+<script defer x type="module" src="./scripts/handler.js"></script>
 
 </html>
