@@ -1,6 +1,6 @@
-import { movePlayer } from "./scripts/player.js";
-import { calculator } from "./scripts/calculator.js";
-import { gradeCalculator } from "./scripts/grade.js";
+const { movePlayer } = require("./player.js");
+const { calculator } = require("./calculator.js");
+const { gradeCalculator } = require("./grade.js");
 function getElement(key) {
   return document.getElementById(key);
 }
