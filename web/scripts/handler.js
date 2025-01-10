@@ -39,18 +39,18 @@ async function initState() {
     penclAction.querySelector("#name").textContent = colorPencil;
     penclAction
       .querySelector("#minus")
-      .addEventListener("click", async function () {
-        console.log("Button clicked", colorPencil);
+      .addEventListener("click", async function (e) {
+        e.preventDefault();
+        e.stopPropagation();
         if (color.qty <= 1) return;
         await removeColor(colorPencil);
-        await initState();
       });
     penclAction
       .querySelector("#plus")
-      .addEventListener("click", async function () {
-        console.log("Button clicked", colorPencil);
+      .addEventListener("click", async function (e) {
+        e.preventDefault();
+        e.stopPropagation();
         await addColor(colorPencil);
-        await initState();
       });
     pencilAction.appendChild(penclAction);
     pencilAction.style.marginBottom = "12px";
@@ -75,4 +75,10 @@ async function addColor(color) {
     method: "POST",
   });
 }
-initState();
+// initState();
+document.addEventListener("DOMContentLoaded", () => {
+  initState();
+  document.removeEventListener("DOMContentLoaded", () => {
+    console.log("remove");
+  });
+});
